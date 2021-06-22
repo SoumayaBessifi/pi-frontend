@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pi-front"
+    }
+  },
+  "defaultProject": "pi-front",
+  "cli": {
+    "analytics": false
+  }
 }
