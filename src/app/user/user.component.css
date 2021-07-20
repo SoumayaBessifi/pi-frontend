@@ -1,0 +1,56 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  img {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .imageI{
+    height: 100%;
+    width: 50%;
+  }
+  .infoI{
+    height: 80%;
+    width: 50%;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  #delete{
+    
+    position: absolute;
+    right: 16px;
+    bottom: 2px;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1543353071-873f17a7a088?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoeSUyMGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+    color: white;
+    text-align: center;
+  }
+  body{
+  padding-bottom: 80%;
+  
+  }
+  .editBtn{
+    background-color: rgb(32, 192, 32);
+    color: white;
+  }
