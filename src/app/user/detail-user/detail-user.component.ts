@@ -32,7 +32,7 @@ export class DetailUserComponent implements OnInit {
 
     this.userEditForm=new FormGroup({
       id: new FormControl(''),
-      title:new FormControl(''),
+      civility:new FormControl(''),
       lastName:new FormControl(''),
       firstName:new FormControl(''),
       email:new FormControl(''),
@@ -51,7 +51,7 @@ export class DetailUserComponent implements OnInit {
  }
  updateUser(){
   this.Eserivice.updateUser(this.EForm.id.value,
-    this.EForm.title.value,
+    this.EForm.civility.value,
     this.EForm.lastName.value,
     this.EForm.firstName.value,
     this.EForm.email.value,

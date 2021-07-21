@@ -18,10 +18,12 @@ export class NavbarComponent implements OnInit {
     this.connected=localStorage.getItem('currentUser')!=null;
 
   }
+  
 
   logout(){
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
     window.location.reload();
+   
   }
 }

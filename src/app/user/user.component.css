@@ -51,6 +51,11 @@ table {
   
   }
   .editBtn{
-    background-color: rgb(32, 192, 32);
+    background-color: #FA8072;
     color: white;
+  }
+  .deleteBtn{
+    background-color: #8B0000;
+    color: white;
+
   }

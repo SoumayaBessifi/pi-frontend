@@ -34,9 +34,9 @@
                   <td>{{i.password}}</td>
                   
                <td>
-                      <button class="editBtn" mat-raised-button (click)="openEditDialoge(i.id,i.title,i.lastName,i.firstName,i.email,i.password,i.sickness)"> Edit</button>
+                      <button class="editBtn" mat-raised-button (click)="openEditDialoge(i.id,i.civility,i.lastName,i.firstName,i.email,i.password)"> Edit</button>
                    </td> 
-                   <td>        <button mat-raised-button color="warn"class="bg-primary" (click)="deleteUser(i.id)">Delete</button>
+                   <td>        <button mat-raised-button class="deleteBtn" (click)="deleteUser(i.id)">Delete</button>
               </td>
               </tr>
           </table>

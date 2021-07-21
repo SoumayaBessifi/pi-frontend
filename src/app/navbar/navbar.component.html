@@ -7,6 +7,6 @@
     <a class="link" mat-button routerLink="user" *ngIf="connected">Users</a>
 
     <a class="link" mat-button routerLink="login" *ngIf="!connected" >Login</a>
-    <a class="link" mat-button  *ngIf="connected" (click)="logout()" >Logout</a>
+    <a class="link" mat-button *ngIf="connected" (click)="logout()"  >Logout</a>
     <a class="link" mat-button routerLink="register" *ngIf="!connected">Register</a>
   </mat-toolbar>

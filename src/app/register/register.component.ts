@@ -23,7 +23,7 @@ click = false;
   ngOnInit(): void {
     this.form = this.formBuilder.group({
     
-    title:['',Validators.required],
+    civility:['',Validators.required],
     lastName:['',Validators.required],
     firstName :['',Validators.required],
     email:['',[Validators.required,Validators.email]],

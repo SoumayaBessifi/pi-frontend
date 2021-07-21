@@ -42,7 +42,7 @@ submit(): void {
       if((r.email==user.email)&&(r.password==user.password)){
         localStorage.setItem('currentUser',JSON.stringify(r));
         window.location.reload();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       }
     })
   
