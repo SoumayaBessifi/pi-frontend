@@ -15,3 +15,7 @@ img {
     background-size: cover;
   
   }
+  .warn{
+    color: red;
+    font-weight: bold;
+  }

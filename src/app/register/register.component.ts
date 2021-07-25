@@ -3,6 +3,10 @@ import { UserService } from '../services/user.service';
 import {Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ControlContainer, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidatorFn, FormControl, 
+  ValidationErrors } from '@angular/forms';
+  import { Subscription } from 'rxjs';
+ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -23,24 +27,22 @@ click = false;
   ngOnInit(): void {
     this.form = this.formBuilder.group({
     
-    civility:['',Validators.required],
-    lastName:['',Validators.required],
-    firstName :['',Validators.required],
-    email:['',[Validators.required,Validators.email]],
-    password:['',Validators.required, Validators.minLength(8)]
-
+      civility:[null,Validators.required],
+      lastName:[null,Validators.required],
+      firstName :[null,Validators.required],
+      email:[null,[Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)]],
+      password:[null,[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}/)]]
+  
     } ); }
 
-    get EForm(){
-      return this.form.controls
-      
-    }
-
    
+
+     get f() { return this.form.controls; }
 
   
 
     submit(){
+      this.exist = false;
       this.click = false;
 
       this.control = "";
@@ -48,7 +50,7 @@ click = false;
 
       this.us.getAll().subscribe(res=>{
         (res['hydra:member']).map(r=>{
-          if((r.email==this.EForm.email.value)){
+          if((r.email==this.f.email.value)){
             this.exist=true;
             
           
@@ -59,14 +61,15 @@ click = false;
       
       setTimeout(() => {if(!this.exist){
         this.us.submit(
-         this.EForm.civility.value,
-         this.EForm.lastName.value,
-        this.EForm.firstName.value,
-        this.EForm.email.value,
-         this.EForm.password.value).pipe().subscribe(()=>this.router.navigateByUrl("/login"))
+         this.f.civility.value,
+         this.f.lastName.value,
+        this.f.firstName.value,
+        this.f.email.value,
+         this.f.password.value).pipe().subscribe(()=>this.router.navigateByUrl("/login"))
   }
   else{
-  this.control="ce mail existe déja";
+
+  this.control="Ce mail existe déja !";
   this.click = true;
   
   
