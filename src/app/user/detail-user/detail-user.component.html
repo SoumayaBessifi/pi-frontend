@@ -1,0 +1,38 @@
+<form  [formGroup]="userEditForm" >
+    <div class="form-group mb-3" >
+      <label class="form-label">id</label>
+      <input  type="text" formControlName="id" readonly class="form-control" [(ngModel)]="id" placeholder="id" >
+      
+    </div>
+      <div class="form-group mb-3" >
+          <label class="form-label">Civility</label>
+          
+          <select class="form-control" id="exampleFormControlSelect1" formControlName="civility" [(ngModel)]="civility" formControlName="title" >
+            <option value="mr" >Mr</option>
+            <option value="mrs">Mrs</option>
+            <option value="miss">Miss</option>
+            <option value="ms">Ms</option>
+          </select>
+        </div>
+        <div class="row">
+        <div class="form-group col-6" >
+          <label class="form-label">Last Name</label>
+          <input  type="text" formControlName="lastName" class="form-control" [(ngModel)]="lastName" placeholder="lastName" >
+        </div>
+        <div class="form-group col-6" >
+          <label class="form-label">First Name</label>
+          <input  type="text" formControlName="firstName" class="form-control" [(ngModel)]="firstName" placeholder="firstName" >
+        </div>
+      </div>
+        <div class="form-group mb-3" >
+          <label class="form-label">Email</label>
+          <input  type="text" formControlName="email" class="form-control" [(ngModel)]="email" placeholder="email" >
+        </div>
+        <div class="form-group mb-3" >
+          <label class="form-label">Password</label>
+          <input  type="text" formControlName="password" class="form-control" [(ngModel)]="password" placeholder="password" >
+        </div>
+      
+        <button  class="btn btn-success" [mat-dialog-close]="true" type="submit" (click)="updateUser()">Save</button>
+        
+    </form>   

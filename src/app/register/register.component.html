@@ -1,0 +1,87 @@
+<body> 
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <br>
+    <form class="form-signin" [formGroup]="form" (submit)="submit()">
+      <div class="mb-3">
+        <h4 class="h3 mb-3 fw-normal">Register and join us !</h4>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Civility</label>
+          <select class="form-control" id="exampleFormControlSelect1" formControlName="civility">
+            <option value="mr">Mr</option>
+            <option value="mrs">Mrs</option>
+            <option value="miss">Miss</option>
+            <option value="ms">Ms</option>
+          </select>
+          <div *ngIf="f.civility.invalid && (f.civility.dirty || f.civility.touched)" class="alert alert-danger" role="alert">
+            <div *ngIf="f.civility.errors.required">
+              Civility is required !
+            </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="floatingInput">last name</label>
+          <input formControlName="lastName" class="form-control" id="floatingInput" placeholder="lastname">
+          <div *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched)" class="alert alert-danger" role="alert">
+            <div *ngIf="f.lastName.errors.required">
+              Last Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingInput">first name</label>
+          <input formControlName="firstName" class="form-control" id="floatingInput" placeholder="firstname">
+          <div *ngIf="f.firstName.invalid && (f.firstName.dirty || f.firstName.touched)" class="alert alert-danger" role="alert">
+            <div *ngIf="f.firstName.errors.required">
+              First Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingInput">Email address</label>
+          <input formControlName="email" type="email" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <div *ngIf="f.email.invalid && f.email.touched" >
+            <div *ngIf="f.email.errors.required" class="alert alert-danger" role="alert">
+              Email is required !
+            </div>
+            <div *ngIf="f.email.errors.pattern" class="alert alert-danger" role="alert">Email doesn't match the pattern !</div>
+          </div>
+        </div>
+        <div class="checkbox mb-3" *ngIf="click">
+          <div class="alert alert-danger" role="alert">
+            {{control}}
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+
+          <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password">
+          <div *ngIf="f.password.invalid && f.password.touched">
+            <div *ngIf="f.password.errors.required" class="alert alert-danger" role="alert">
+              Password is required !
+            </div>
+            <div *ngIf="f.password.errors.minlength" class="alert alert-danger" role="alert">Password must be at least 8 characters</div>
+            <div *ngIf="f.password.errors.pattern" class="alert alert-danger" role="alert">Password doesn't match the pattern !</div>
+          </div>
+          <div id="passwordHelpBlock" class="form-text">
+            Your password must contain 8 characters: letters, numbers and at least one special character
+          </div>
+        </div>
+       
+        <button class="w-100 btn btn-lg btn-primary"   type="submit">submit</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+  
+  

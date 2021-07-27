@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="mat-elevation-z6" >
+    <span> <mat-icon [ngStyle]="{'color':'white'}"> room_service </mat-icon><a href="/" class="link" >Ommek Sannefa</a></span>
+<div class="spacer"></div>
+    <a class="link" mat-button routerLink="recipes" >Recipes</a>
+    <a class="link" mat-button routerLink="blog" >Blog</a>
+    <a class="link" mat-button routerLink="claims" >Claims</a>
+    <a class="link" mat-button routerLink="user" *ngIf="connected">Users</a>
+
+    <a class="link" mat-button routerLink="login" *ngIf="!connected" >Login</a>
+    <a class="link" mat-button *ngIf="connected" (click)="logout()"  >Logout</a>
+    <a class="link" mat-button routerLink="register" *ngIf="!connected">Register</a>
+  </mat-toolbar>
